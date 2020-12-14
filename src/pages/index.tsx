@@ -1,7 +1,11 @@
+import Layout from "./containers/layout"
+
 const Index = () => {
-    return (
-        <h1>Index</h1>
-    )
+	return (
+		<Layout>
+			<h1>Index</h1>
+		</Layout>
+	)
 };
 
 export default Index;
