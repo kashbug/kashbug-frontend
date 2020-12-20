@@ -1,0 +1,19 @@
+{
+    "cars": [
+        {
+            "id": 1,
+            "vehicle": "car",
+            "ownerName": "hee"
+        },
+        {
+            "id": 2,
+            "vehicle": "bike",
+            "ownerName": "kyle"
+        },
+        {
+            "id": 3,
+            "vehicle": "airplane",
+            "ownerName": "tom"
+        }
+    ]
+}
