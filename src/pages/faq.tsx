@@ -1,11 +1,15 @@
-import Layout from '../containers/layout';
-import FaqContainer from '../containers/faq/FaqContainer';
+import Layout from '../containers/layout/layout';
+import QnaContainer from '../containers/qna/QnaContainer';
+import NavBar from '../containers/layout/navbar';
 
 const Faq = () => {
 	return (
-		<Layout>
-			<FaqContainer />
-		</Layout>
+		<>
+			<NavBar />
+			<Layout>
+				<QnaContainer />
+			</Layout>
+		</>
 	)
 };
 

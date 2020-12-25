@@ -1,4 +1,4 @@
-import Layout from "../containers/layout"
+import Layout from "../containers/layout/layout"
 
 const Index = () => {
 	return (
