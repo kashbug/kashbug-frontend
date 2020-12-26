@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 // mui
 import { makeStyles } from '@material-ui/core/styles';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
+import { Tabs, Tab, Typography, Box } from '@material-ui/core';
 // component
 import Fnq from './Fnq';
+import DirectQna from './DirectQna';
 
 const useStyles = makeStyles({
     root: {
@@ -59,18 +57,14 @@ const QnaContainer = () => {
         <WrapDiv>
             <CenterDiv>
                 <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" centered>
-                    <Tab label="Item One" />
-                    <Tab label="Item Two" />
-                    <Tab label="Item Three" />
+                    <Tab label="자주하는 질문" />
+                    <Tab label="1:1 질문하기" />
                 </Tabs>
                 <TabPanel value={value} index={0}>
                     <Fnq />
                 </TabPanel>
                 <TabPanel value={value} index={1}>
-                    Item Two
-                </TabPanel>
-                <TabPanel value={value} index={2}>
-                    Item Three
+                    <DirectQna />
                 </TabPanel>
             </CenterDiv>
         </WrapDiv>

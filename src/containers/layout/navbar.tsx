@@ -1,9 +1,11 @@
 // mui
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import {
+    AppBar,
+    Toolbar,
+    Typography,
+    Button,
+} from '@material-ui/core';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -25,9 +27,9 @@ const NavBar = () => {
             <AppBar position="fixed">
                 <Toolbar>
                 <Typography variant="h6" className={classes.title}>
-                    News
+                    KashBug
                 </Typography>
-                <Button color="inherit">Login</Button>
+                <Button color="inherit">로그인</Button>
                 </Toolbar>
             </AppBar>
         </div>
