@@ -1,8 +1,4 @@
-import styled from 'styled-components';
-
-const CommonLayout = styled.div`
-	padding:20px;
-`;
+import Container from '@material-ui/core/Container';
 
 type Props = {
 	children: JSX.Element,
@@ -10,7 +6,7 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
 	return (
-		<CommonLayout>{children}</CommonLayout>
+		<Container maxWidth="lg">{children}</Container>
 	)
 };
 

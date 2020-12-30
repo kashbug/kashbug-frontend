@@ -3,9 +3,10 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import {
     AppBar,
     Toolbar,
-    Typography,
-    Button,
+    Container,
 } from '@material-ui/core';
+// next
+import  Link from 'next/link';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -13,7 +14,9 @@ const useStyles = makeStyles((theme: Theme) =>
       flexGrow: 1,
     },
     title: {
-      flexGrow: 1,
+        fontWeight: 'bold',
+        fontSize: '1rem',
+        flexGrow: 1,
     },
   }),
 );
@@ -25,12 +28,19 @@ const NavBar = () => {
     return (
         <div className={classes.root}>
             <AppBar position="fixed">
-                <Toolbar>
-                <Typography variant="h6" className={classes.title}>
-                    KashBug
-                </Typography>
-                <Button color="inherit">로그인</Button>
-                </Toolbar>
+                <Container maxWidth="lg">
+                    <Toolbar>
+                        <Link href="/">
+                            <a className={classes.title}>KashBug</a>
+                        </Link>
+                        <Link href="/faq">
+                            <a>문의하기</a>
+                        </Link>
+                        <Link href="/login">
+                            <a style={{ marginLeft: '10px' }}>로그인</a>
+                        </Link>
+                    </Toolbar>
+                </Container>
             </AppBar>
         </div>
     )
