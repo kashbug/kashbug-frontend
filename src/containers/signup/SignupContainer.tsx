@@ -111,7 +111,7 @@ const SignupContainer = () => {
                     <CategoryLi>#게임</CategoryLi>
                     <CategoryLi>#영화</CategoryLi>
                 </Category>
-                <div style={{ marinTop: '20px' }}>
+                <div style={{ marginTop: '20px' }}>
                     <Button variant="contained" color="primary">확인</Button>
                     <Button variant="contained" color="secondary" style={{ marginLeft: '10px' }}>취소</Button>
                 </div>
