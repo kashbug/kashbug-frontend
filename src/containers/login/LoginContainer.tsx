@@ -47,7 +47,7 @@ const LoginContainer = () => {
     return (
         <LoginWrap>
             <Login>
-                <h2>KashBug</h2>
+                <h2>로그인</h2>
                 <Social>
                     <SocialIcon src="/naver.png" alt="naver" id="naver" />
                     <SocialIcon src="/kakao.png" alt="kakao" id="kakao" />
