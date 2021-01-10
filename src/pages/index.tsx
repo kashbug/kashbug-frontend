@@ -8,7 +8,7 @@ const Index = () => {
 		<>
 			<NavBar />
 			<div style={{ marginTop: '60px', height: '400px' }}>
-                <Slider />
+                <Slider images={['/naver.png', '/kakao.png', '/facebook.png']} />
             </div>
 			<Layout>
 				<IndexContainer />
