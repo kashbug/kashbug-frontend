@@ -11,12 +11,13 @@ const ItemWrap = styled.li`
     }
 `;
 const LogoBox = styled.div`
+    position: relative;
     display: flex;
     padding: 8px;
     width: 200px;
     height: 200px;
-    align-items: flex-end;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
     background-color: #491651;
     border-radius: 16px;
 `;
@@ -24,6 +25,9 @@ const Logo = styled.img`
 
 `;
 const ClosingDate = styled.p`
+    position: absolute;
+    bottom: 0;
+    right: 8px;
     color: #000000;
     font-weight: 500;
     text-shadow: -1px 0 #ffffff, 0 1px #ffffff, 1px 0 #ffffff, 0 -1px #ffffff;
