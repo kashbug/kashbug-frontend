@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-interface SliderWrapProps {
-    children: Element[]; image: string;
-}
+
 const SliderWrap = styled.div`
-    position:relative;width:100%;height:100%;background-image: url(${(props:any) => props.image || ''});
+    position:relative;height:${(props:any) => props.height || '400px'};
+    background-image: url(${(props:any) => props.image || ''});
     background-repeat: no-repeat;
     background-size: cover; 
     background-position: center; 
@@ -25,20 +24,20 @@ const LeftBtn = styled.div`
 `;
 interface SliderProps {
     images: Array<string>;
+    height: string;
 };
 interface ImageProps {
     image: string;
     id: string;
     active: boolean;
 };
-const Slider = ({ images }: SliderProps) => {
+const Slider = ({ images, height }: SliderProps) => {
     const [imageData, setImageData] = useState<ImageProps[]>([]);
     // 이미지 데이터 설정
     useEffect(() => {
         const tempImageData: ImageProps[] = images.map((v: any, i: number)=> ({ image: v, active: i === 0 ? true : false, id: `${i}_key` }));
         setImageData(tempImageData);
     }, []);
-    console.log(imageData);
     const onRightBtn = () => {
         setImageData((prev:ImageProps[]) => {
             const activeIndex = prev.findIndex(v => v.active);
@@ -82,13 +81,13 @@ const Slider = ({ images }: SliderProps) => {
     };
     return (
         // @ts-ignore
-        <SliderWrap image={imageData.length > 0 && imageData.filter(v => v.active)[0].image}>
+        <SliderWrap image={imageData.length > 0 && imageData.filter(v => v.active)[0].image} height={height}>
             <RightBtn onClick={onRightBtn} />
             <LeftBtn onClick={onLeftBtn} />
             <PointerWrap>
                 {
                     imageData.map((v: ImageProps) => (
-                        <Pointer key={v.id} color={v.active ? '#BDBDBD' : ''}/>
+                        <Pointer key={v.id} color={v.active ? '#000' : ''}/>
                     ))
                 }
             </PointerWrap>

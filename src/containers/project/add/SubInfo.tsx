@@ -39,6 +39,7 @@ interface SubInfoProps {
     layoutSize: string;
 };
 const SubInfo = ({ layoutSize }: SubInfoProps) => {
+    console.log('SubInfo');
     return (
         <div>
             <FormControl style={{ width: '100%' }}>

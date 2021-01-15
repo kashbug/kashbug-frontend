@@ -13,12 +13,15 @@ import withWidth from '@material-ui/core/withWidth';
 // component
 import Info from './Info';
 import SubInfo from './SubInfo';
+import Confirm from './Confirm';
+// api
+import { ProjectAdd as ProjectAddInterface} from '../../../api/Project';
 
 const AddWrap = styled.div`
     position:relative;height:100vh;
 `;
 const Add = styled.div`
-    position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);padding:20px;border:1px solid red;width:100%;
+    position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);padding:20px;width:100%;
 `;
 
 const STEP = ['기본정보', '부가정보', '확인', '결제'];
@@ -42,10 +45,23 @@ interface ProjectAddContainerProps {
     width: string;
 };
 
+
 const ProjectAddContainer = ({ width }: ProjectAddContainerProps) => {
     const router = useRouter();
     const classes = useStyles();
     const [activeStep, setActiveStep] = useState(0);
+    const [projectData, setProjectData] = useState<ProjectAddInterface>({
+        name: '',
+        category: [],
+        contents: '',
+        reward: 0,
+        reward_duration: 0,
+        url: '',
+        imageUrl: [],
+        status: '',
+        startAt: new Date(),
+        deadlineAt: new Date(),
+    });
     const steps = STEP;
     const handleNext = () => {
         router.push(`/project/add/step${activeStep + 1}`);
@@ -55,6 +71,13 @@ const ProjectAddContainer = ({ width }: ProjectAddContainerProps) => {
     const handleBack = () => {
         router.push(`/project/add/step${activeStep - 1}`);
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    };
+    const onChangeInfoHandler = (e:any) => {
+        const { name, value } = e.target;
+        setProjectData({
+            ...projectData,
+            [name]: value,
+        });
     };
     return (
         <AddWrap>
@@ -70,12 +93,17 @@ const ProjectAddContainer = ({ width }: ProjectAddContainerProps) => {
                     </Stepper>
                     {
                         activeStep === 0 && (
-                            <Info />
+                            <Info projectData={projectData} onChangeInfoHandler={onChangeInfoHandler} />
                         )
                     }
                     {
                         activeStep === 1 && (
                             <SubInfo layoutSize={width} />
+                        )
+                    }
+                    {
+                        activeStep === 2 && (
+                            <Confirm />
                         )
                     }
                     <div style={{ textAlign: 'center' }}>
@@ -84,7 +112,7 @@ const ProjectAddContainer = ({ width }: ProjectAddContainerProps) => {
                                 <Typography className={classes.instructions}>All steps completed</Typography>
                             </div>
                         ) : (
-                            <div style={{ marginTop: '20px' }}>
+                            <div style={{ marginTop: '30px' }}>
                                 <Button
                                     disabled={activeStep === 0}
                                     onClick={handleBack}
