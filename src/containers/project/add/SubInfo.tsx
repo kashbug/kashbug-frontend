@@ -1,6 +1,8 @@
 import styled from "styled-components";
 // mui
 import { TextField, FormControl, } from '@material-ui/core';
+// api
+import { ProjectAdd as ProjectAddInterface } from '../../../api/Project';
 
 const Pictures = styled.div`
     margin-top:20px;width:100%;
@@ -37,19 +39,26 @@ const Plus = styled.span`
 `;
 interface SubInfoProps {
     layoutSize: string;
+    onChangeInfoHandler: (e:any) => void;
+    projectData: ProjectAddInterface;
 };
-const SubInfo = ({ layoutSize }: SubInfoProps) => {
-    console.log('SubInfo');
+const SubInfo = ({ projectData, layoutSize, onChangeInfoHandler }: SubInfoProps) => {
+    const {
+        contents,
+    } = projectData;
     return (
         <div>
             <FormControl style={{ width: '100%' }}>
                 <TextField
-                    id="explain"
+                    id="contents"
                     label="프로젝트 설명"
+                    name="contents"
                     multiline
                     rows={4}
+                    value={contents}
                     placeholder="프로젝트 설명을 작성해주세요."
                     variant="outlined"
+                    onChange={onChangeInfoHandler}
                 />
             </FormControl>
             <Pictures>

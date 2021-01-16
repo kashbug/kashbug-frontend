@@ -15,9 +15,9 @@ import {
   } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
 // api
-import { ProjectAdd as ProjectAddInterface} from '../../../api/Project';
+import { ProjectAdd as ProjectAddInterface } from '../../../api/Project';
 // enum
-import { CategoryType, StatusType, RewardDurationType } from '../../../enumType/Project';
+import { CategoryType, StatusType, RewardDurationType, RewardPriceType } from '../../../enumType/Project';
 
 const Wrap = styled.div`
     text-align:center;
@@ -30,21 +30,19 @@ const SelectBox = styled.div`
 interface InfoProps {
     projectData: ProjectAddInterface,
     onChangeInfoHandler: (e:any) => void,
+    onChangeDateHandler: (e:any) => void,
 };
 
-const Info = ({ projectData, onChangeInfoHandler }: InfoProps) => {
+const Info = ({ projectData, onChangeInfoHandler, onChangeDateHandler }: InfoProps) => {
     const {
         name,
         category,
-        contents,
         reward,
         reward_duration,
         url,
         status,
-        startAt,
         deadlineAt,
     } = projectData;
-    console.log(RewardDurationType);
     return (
         <Wrap>
             <FormControl style={{ width: '100%' }}>
@@ -60,13 +58,15 @@ const Info = ({ projectData, onChangeInfoHandler }: InfoProps) => {
                             name: 'reward',
                             id: 'reward',
                         }}
+                        value={reward}
                         onChange={onChangeInfoHandler}
                     >
-                        <option aria-label="선택" value="" />
-                        <option value={1000}>1,000원</option>
-                        <option value={5000}>5,000원</option>
-                        <option value={10000}>10,000원</option>
-                        <option value={15000}>15,000원</option>
+                         <option aria-label="선택" value="" />
+                    {
+                        Object.entries(RewardPriceType).map(v => (
+                            <option key={v[0]} value={v[0]}>{v[1]}</option>
+                        ))
+                    }
                     </Select>
                 </FormControl>
                 <FormControl style={{ width: '45%', float:'right' }}>
@@ -77,6 +77,7 @@ const Info = ({ projectData, onChangeInfoHandler }: InfoProps) => {
                             name: 'category',
                             id: 'category',
                         }}
+                        value={category}
                         onChange={onChangeInfoHandler}
                     >
                         <option aria-label="선택" value="" />
@@ -97,6 +98,7 @@ const Info = ({ projectData, onChangeInfoHandler }: InfoProps) => {
                             name: 'status',
                             id: 'status',
                         }}
+                        value={status}
                         onChange={onChangeInfoHandler}
                     >
                         <option aria-label="선택" value="" />
@@ -115,6 +117,7 @@ const Info = ({ projectData, onChangeInfoHandler }: InfoProps) => {
                             name: 'reward_duration',
                             id: 'reward_duration',
                         }}
+                        value={reward_duration}
                         onChange={onChangeInfoHandler}
                     >
                         <option aria-label="선택" value="" />
@@ -132,12 +135,13 @@ const Info = ({ projectData, onChangeInfoHandler }: InfoProps) => {
                         <KeyboardDatePicker
                             disableToolbar
                             variant="inline"
-                            format="MM/dd/yyyy"
+                            format="yyyy/MM/dd"
                             margin="normal"
-                            id="date-picker-inline"
+                            id="deadlineAt"
+                            name="deadlineAt" 
                             label="프로젝트 마감일"
                             value={deadlineAt}
-                            onChange={onChangeInfoHandler}
+                            onChange={onChangeDateHandler}
                             KeyboardButtonProps={{
                                 'aria-label': 'change date',
                             }}

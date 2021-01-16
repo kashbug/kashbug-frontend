@@ -79,6 +79,13 @@ const ProjectAddContainer = ({ width }: ProjectAddContainerProps) => {
             [name]: value,
         });
     };
+    const onChangeDateHandler = (e:any) => {
+        setProjectData({
+            ...projectData,
+            deadlineAt: e,
+        });
+    }
+    console.log(projectData);
     return (
         <AddWrap>
             <Add>
@@ -93,12 +100,12 @@ const ProjectAddContainer = ({ width }: ProjectAddContainerProps) => {
                     </Stepper>
                     {
                         activeStep === 0 && (
-                            <Info projectData={projectData} onChangeInfoHandler={onChangeInfoHandler} />
+                            <Info projectData={projectData} onChangeInfoHandler={onChangeInfoHandler} onChangeDateHandler={onChangeDateHandler} />
                         )
                     }
                     {
                         activeStep === 1 && (
-                            <SubInfo layoutSize={width} />
+                            <SubInfo projectData={projectData} layoutSize={width} onChangeInfoHandler={onChangeInfoHandler} />
                         )
                     }
                     {
