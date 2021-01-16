@@ -7,6 +7,7 @@ const SliderWrap = styled.div`
     background-repeat: no-repeat;
     background-size: cover; 
     background-position: center; 
+    border-radius: ${(props:any) => props.radius || 0};
 `;
 const PointerWrap = styled.div`
     position:absolute;top:90%;left:50%;transform:translate(-50%,-50%);
@@ -25,13 +26,14 @@ const LeftBtn = styled.div`
 interface SliderProps {
     images: Array<string>;
     height: string;
+    radius?: string;
 };
 interface ImageProps {
     image: string;
     id: string;
     active: boolean;
 };
-const Slider = ({ images, height }: SliderProps) => {
+const Slider = ({ images, height, radius }: SliderProps) => {
     const [imageData, setImageData] = useState<ImageProps[]>([]);
     // 이미지 데이터 설정
     useEffect(() => {
@@ -81,7 +83,7 @@ const Slider = ({ images, height }: SliderProps) => {
     };
     return (
         // @ts-ignore
-        <SliderWrap image={imageData.length > 0 && imageData.filter(v => v.active)[0].image} height={height}>
+        <SliderWrap image={imageData.length > 0 && imageData.filter(v => v.active)[0].image} height={height} radius={radius}>
             <RightBtn onClick={onRightBtn} />
             <LeftBtn onClick={onLeftBtn} />
             <PointerWrap>
