@@ -24,8 +24,8 @@ export enum  RewardDurationType{
     TWO_WEEK = "14",
 };
 export enum  RewardPriceType{
-    ooo1 = "1,000원",
-    ooo5 = "5,000원",
-    oooo1 = "10,000원",
-    ooo51 = "15,000원",
+    OOO1 = "1,000원",
+    OOO5 = "5,000원",
+    OOOO1 = "10,000원",
+    OOO51 = "15,000원",
 };

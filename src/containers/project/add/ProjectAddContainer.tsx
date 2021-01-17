@@ -24,7 +24,7 @@ const Add = styled.div`
     position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);padding:20px;width:100%;
 `;
 
-const STEP = ['기본정보', '부가정보', '확인', '결제'];
+const STEP = ['기본정보', '부가정보', '미리보기', '결제'];
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -110,7 +110,7 @@ const ProjectAddContainer = ({ width }: ProjectAddContainerProps) => {
                     }
                     {
                         activeStep === 2 && (
-                            <Confirm />
+                            <Confirm projectData={projectData} />
                         )
                     }
                     <div style={{ textAlign: 'center' }}>

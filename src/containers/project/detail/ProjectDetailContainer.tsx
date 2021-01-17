@@ -6,14 +6,13 @@ import { TextField, FormControl, Button } from '@material-ui/core';
 
 const Wrap = styled.div`
     margin-top:20px;
-    outline:1px solid red;
 `;
 const ProjectDetailContainer = () => {
     return (
         <Wrap>
             <Info />
             <div style={{ marginTop: '30px' }}>
-                <Slider images={['/naver.png']} height="300px" radius="10px" />
+                <Slider images={['/img_notfound.png']} height="300px" radius="10px" />
             </div>
             <FormControl style={{ width: '100%', marginTop: '30px' }}>
                 <TextField
@@ -27,8 +26,7 @@ const ProjectDetailContainer = () => {
                 />
             </FormControl>
             <div style={{ margin: '30px 0', textAlign: 'center' }}>
-                <Button variant="contained" color="primary">버그등록하기</Button>
-                <Button variant="contained" color="secondary" style={{ marginLeft: '10px' }}>취소</Button>
+                <Button variant="contained" color="primary">버그 등록하기</Button>
             </div>
         </Wrap>
     );

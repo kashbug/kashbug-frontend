@@ -66,10 +66,10 @@ const SubInfo = ({ projectData, layoutSize, onChangeInfoHandler }: SubInfoProps)
                     layoutSize === 'xs' ? (
                         <>
                             <MobilePicBox>
-                                <Picture src="/naver.png" alt='test' id='test' />
+                                <Picture src="/img_notfound.png" alt='test' id='test' />
                             </MobilePicBox>
                             <MobilePicBox>
-                                <Picture src="/naver.png" alt='test' id='test' />
+                                <Picture src="/img_notfound.png" alt='test' id='test' />
                             </MobilePicBox>
                             <MobileAddPic>
                                 <Plus>+</Plus>
@@ -78,10 +78,10 @@ const SubInfo = ({ projectData, layoutSize, onChangeInfoHandler }: SubInfoProps)
                     ) : (
                         <>
                             <WebPicBox>
-                                <Picture src="/naver.png" alt='test' id='test' />
+                                <Picture src="/img_notfound.png" alt='test' id='test' />
                             </WebPicBox>
                             <WebPicBox>
-                                <Picture src="/naver.png" alt='test' id='test' />
+                                <Picture src="/img_notfound.png" alt='test' id='test' />
                             </WebPicBox>
                             <WebAddPic>
                                 <Plus>+</Plus>

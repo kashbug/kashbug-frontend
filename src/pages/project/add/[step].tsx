@@ -10,7 +10,7 @@ interface StepProps {
 const Step = ({ asPath }: StepProps) => {
     return(
         <>
-            <NavBar />
+            <NavBar position="relative"/>
             <Layout>
                 <ProjectAddContainer />
             </Layout>

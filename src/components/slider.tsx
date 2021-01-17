@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const SliderWrap = styled.div`
-    position:relative;height:${(props:any) => props.height || '400px'};
+    position:relative;
+    height:${(props:any) => props.height || '400px'};
     background-image: url(${(props:any) => props.image || ''});
     background-repeat: no-repeat;
-    background-size: cover; 
     background-position: center; 
     border-radius: ${(props:any) => props.radius || 0};
 `;
