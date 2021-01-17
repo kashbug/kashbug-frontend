@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 
 const ItemWrap = styled.li`
@@ -43,8 +44,10 @@ const ProjectName = styled.p`
     padding: 8px 0;
     font-size: 1rem;
 `;
-
+const toDay = new Date();
 const CorporationItem = ({...props}) => {
+    const [count, setCount] = useState(0);
+    console.log(props.closingDate);
     return (
         <>
             <ItemWrap>
@@ -55,7 +58,7 @@ const CorporationItem = ({...props}) => {
                         <p>채택된 버그: {props.adoptBugCount}</p>
                     </BugStateBox>
                 </LogoBox>
-                <ProjectName>{props.projectName} - 21일 남음</ProjectName>
+                <ProjectName>{props.projectName} - {props.closingDate}일 남음</ProjectName>
             </ItemWrap>
         </>
     );
