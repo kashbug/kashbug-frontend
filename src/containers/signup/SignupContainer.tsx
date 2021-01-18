@@ -6,7 +6,6 @@ import {
     Button,
     Select,
     InputLabel,
-    Paper,
 } from '@material-ui/core';
 
 const SignUpWrap = styled.div`

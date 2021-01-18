@@ -20,14 +20,19 @@ const useStyles = makeStyles((theme: Theme) =>
     },
   }),
 );
+interface NavBarProps {
+    position?:string;
+}
 
-
-const NavBar = () => {
+const NavBar = ({ position }: NavBarProps) => {
     const classes = useStyles();
 
     return (
         <div className={classes.root}>
-            <AppBar position="fixed">
+            <AppBar
+                // @ts-ignore
+                position={ position || "fixed" }
+            >
                 <Container maxWidth="lg">
                     <Toolbar>
                         <Link href="/">
