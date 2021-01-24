@@ -1,24 +1,33 @@
 // mui
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import {
-    AppBar,
-    Toolbar,
-    Container,
-} from '@material-ui/core';
+import { AppBar, Toolbar, Container } from '@material-ui/core';
 // next
 import  Link from 'next/link';
 
 const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      flexGrow: 1,
-    },
-    title: {
-        fontWeight: 'bold',
-        fontSize: '1rem',
-        flexGrow: 1,
-    },
-  }),
+    createStyles({
+        headerWrap: {
+            position: 'fixed',
+            backgroundColor: '#ffffff',
+            boxShadow: 'none'
+        },
+        headerBox: {
+            justifyContent: 'space-between',
+            minHeight: '88px'
+        },
+        title: {
+            fontWeight: 'bold',
+            fontSize: '1rem',
+            color: '#3B4E32'
+        },
+        menu: {
+            marginRight: '16px',
+            color: '#3B4E32',
+            '&:last-child': {
+                marginRight: 0
+            }
+        },
+    }),
 );
 interface NavBarProps {
     position?:string;
@@ -26,28 +35,26 @@ interface NavBarProps {
 
 const NavBar = ({ position }: NavBarProps) => {
     const classes = useStyles();
-
     return (
-        <div className={classes.root}>
-            <AppBar
-                // @ts-ignore
-                position={ position || "fixed" }
-            >
-                <Container maxWidth="lg">
-                    <Toolbar>
+        <>
+            <AppBar className={classes.headerWrap}>
+                <Container maxWidth="xl">
+                    <Toolbar className={classes.headerBox}>
                         <Link href="/">
                             <a className={classes.title}>KashBug</a>
                         </Link>
-                        <Link href="/faq">
-                            <a>문의하기</a>
-                        </Link>
-                        <Link href="/login">
-                            <a style={{ marginLeft: '10px' }}>로그인</a>
-                        </Link>
+                        <nav className={classes.menu}>
+                            <Link href="/faq">
+                                <a className={classes.menu}>문의하기</a>
+                            </Link>
+                            <Link href="/login">
+                                <a className={classes.menu}>로그인</a>
+                            </Link>
+                        </nav>
                     </Toolbar>
                 </Container>
             </AppBar>
-        </div>
+        </>
     )
 };
 

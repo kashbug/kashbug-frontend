@@ -3,11 +3,13 @@ import styled from 'styled-components';
 
 const SliderWrap = styled.div`
     position:relative;
+    margin: ${(props:any) => props.margin || '88px 48px 0;'};
     height:${(props:any) => props.height || '400px'};
     background-image: url(${(props:any) => props.image || ''});
     background-repeat: no-repeat;
     background-position: center; 
     border-radius: ${(props:any) => props.radius || 0};
+    transition: .25s all;
 `;
 const PointerWrap = styled.div`
     position:absolute;top:90%;left:50%;transform:translate(-50%,-50%);
@@ -26,6 +28,7 @@ const LeftBtn = styled.div`
 interface SliderProps {
     images: Array<string>;
     height: string;
+    width: string;
     radius?: string;
 };
 interface ImageProps {
@@ -35,10 +38,19 @@ interface ImageProps {
 };
 const Slider = ({ images, height, radius }: SliderProps) => {
     const [imageData, setImageData] = useState<ImageProps[]>([]);
+    const [imageMargin, setImageMargin] = useState('88px 48px 0');
     // 이미지 데이터 설정
     useEffect(() => {
         const tempImageData: ImageProps[] = images.map((v: any, i: number)=> ({ image: v, active: i === 0 ? true : false, id: `${i}_key` }));
         setImageData(tempImageData);
+        
+        window.addEventListener('scroll', function(event) {
+            if (window.scrollY > 0) {
+                setImageMargin('88px 0 0;');
+            } else {
+                setImageMargin('88px 48px 0');
+            }
+        });
     }, []);
     const onRightBtn = () => {
         setImageData((prev:ImageProps[]) => {
@@ -83,7 +95,7 @@ const Slider = ({ images, height, radius }: SliderProps) => {
     };
     return (
         // @ts-ignore
-        <SliderWrap image={imageData.length > 0 && imageData.filter(v => v.active)[0].image} height={height} radius={radius}>
+        <SliderWrap image={imageData.length > 0 && imageData.filter(v => v.active)[0].image} height={height} margin={imageMargin} radius={radius}>
             <RightBtn onClick={onRightBtn} />
             <LeftBtn onClick={onLeftBtn} />
             <PointerWrap>

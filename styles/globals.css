@@ -14,9 +14,10 @@ a {
 p {
   margin: 0;
 }
-ul {
+ul, ol, dl, li {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 * {
   box-sizing: border-box;
