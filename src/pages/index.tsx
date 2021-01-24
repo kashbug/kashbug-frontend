@@ -7,9 +7,7 @@ const Index = () => {
 	return (
 		<>
 			<NavBar />
-			<div style={{ marginTop: '60px'}}>
-                <Slider images={['/img_notfound.png']} height={'400px'} />
-            </div>
+			<Slider maxWidth="800px" />
 			<Layout>
 				<IndexContainer />
 			</Layout>
