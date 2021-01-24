@@ -1,12 +1,11 @@
 import styled from "styled-components";
 import Slider from "../../../components/slider";
 // mui
-import { TextField, FormControl, Button } from '@material-ui/core';
+import { TextField, FormControl } from '@material-ui/core';
 // api
 import { ProjectAdd as ProjectAddInterface } from '../../../api/Project';
 //lib
 import dayjs from 'dayjs';
-import { CategoryType, StatusType, RewardDurationType, RewardPriceType } from '../../../enumType/Project';
 
 const Wrap = styled.div`
     margin-top:20px;
@@ -82,15 +81,15 @@ const Confirm = ({ projectData }: ConfirmProps) => {
                 </Col>
                 <Col width={'30%'}>
                     <Category>#{category}</Category>
-                    <Txt top="30px">보상 금액: <Emp color="#1DDB16">{RewardPriceType[reward]}</Emp></Txt>
-                    <Txt top="5px">버그 채택 후 <Emp color="#FF0000">{RewardDurationType[reward_duration]}일</Emp> 이내 보상</Txt>
+                    <Txt top="30px">보상 금액: <Emp color="#1DDB16">{reward}</Emp></Txt>
+                    <Txt top="5px">버그 채택 후 <Emp color="#FF0000">{reward_duration}일</Emp> 이내 보상</Txt>
                     <Txt top="5px">버그 채택율: <Emp color="#FF0000">100%</Emp></Txt>
                     <Txt top="5px">보상 지급율: <Emp color="#FF0000">100%</Emp></Txt>
                 </Col>
                 <Col width={'20%'} />
             </InfoWrap>
             <div style={{ marginTop: '30px' }}>
-                <Slider images={['/img_notfound.png']} height="300px" radius="10px" />
+                <Slider images={['/img_notfound.png']} maxWidth="500px" radius="10px" />
             </div>
             <FormControl style={{ width: '100%', marginTop: '30px' }}>
                 <TextField

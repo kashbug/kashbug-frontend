@@ -20,7 +20,7 @@ const QnaContainer = () => {
                 </AccordionSummary>
                 <AccordionDetails>
                 <Typography>
-                    안녕하세요. 프로젝트 등록은 기업 회원 가입 -> 마이페이지...
+                    안녕하세요. 프로젝트 등록은 기업 회원 가입 -&gt; 마이페이지...
                 </Typography>
                 </AccordionDetails>
             </Accordion>
@@ -34,7 +34,7 @@ const QnaContainer = () => {
                 </AccordionSummary>
                 <AccordionDetails>
                 <Typography>
-                    안녕하세요. 프로젝트 등록은 기업 회원 가입 -> 마이페이지...
+                    안녕하세요. 프로젝트 등록은 기업 회원 가입 -&gt; 마이페이지...
                 </Typography>
                 </AccordionDetails>
             </Accordion>

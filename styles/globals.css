@@ -21,3 +21,7 @@ ul {
 * {
   box-sizing: border-box;
 }
+
+.swiper-wrapper {
+  padding-inline-start: 0;
+}
