@@ -16,6 +16,8 @@ import SubInfo from './SubInfo';
 import Confirm from './Confirm';
 // api
 import { ProjectAdd as ProjectAddInterface} from '../../../api/Project';
+// enum
+import { CategoryType } from '../../../enumType/Project';
 
 const AddWrap = styled.div`
     position:relative;height:100vh;
@@ -52,7 +54,7 @@ const ProjectAddContainer = ({ width }: ProjectAddContainerProps) => {
     const [activeStep, setActiveStep] = useState(0);
     const [projectData, setProjectData] = useState<ProjectAddInterface>({
         name: '',
-        category: [],
+        category: Object.entries(CategoryType).map(v => ({ name: v[1], value: v[0], status: false })),
         contents: '',
         reward: 0,
         reward_duration: 0,
@@ -85,7 +87,23 @@ const ProjectAddContainer = ({ width }: ProjectAddContainerProps) => {
             deadlineAt: e,
         });
     }
-    console.log(projectData);
+    const onChangeCategoryHandler = (e:any) => {
+        const { name, checked } = e.target;
+        const tempCategory = projectData.category.map(v => {
+            let returnObj = { ...v };
+            if(v.value === name) {
+                returnObj = {
+                    ...v,
+                    status: checked,
+                }
+            }
+            return returnObj;
+        });
+        setProjectData({
+            ...projectData,
+            category: tempCategory,
+        });
+    };
     return (
         <AddWrap>
             <Add>
@@ -100,7 +118,12 @@ const ProjectAddContainer = ({ width }: ProjectAddContainerProps) => {
                     </Stepper>
                     {
                         activeStep === 0 && (
-                            <Info projectData={projectData} onChangeInfoHandler={onChangeInfoHandler} onChangeDateHandler={onChangeDateHandler} />
+                            <Info
+                                projectData={projectData}
+                                onChangeInfoHandler={onChangeInfoHandler}
+                                onChangeDateHandler={onChangeDateHandler}
+                                onChangeCategoryHandler={onChangeCategoryHandler}
+                            />
                         )
                     }
                     {

@@ -80,7 +80,7 @@ const Confirm = ({ projectData }: ConfirmProps) => {
                     <Txt onClick={openPop}><Emp color="#0054FF">{url}</Emp></Txt>
                 </Col>
                 <Col width={'30%'}>
-                    <Category>#{category}</Category>
+                    { category.filter(v => v.status).map((v, i) => (<Category key={`key_${i}`}>#{v.name}</Category>))}
                     <Txt top="30px">보상 금액: <Emp color="#1DDB16">{reward}</Emp></Txt>
                     <Txt top="5px">버그 채택 후 <Emp color="#FF0000">{reward_duration}일</Emp> 이내 보상</Txt>
                     <Txt top="5px">버그 채택율: <Emp color="#FF0000">100%</Emp></Txt>
