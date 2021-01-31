@@ -3,9 +3,6 @@ import styled from 'styled-components';
 import CorporationInfor from '../../components/mypage/CorporationInfor';
 import CorporationItem from '../../components/mypage/CorporationItem';
 
-const MypageWrap = styled.div`
-    margin-top: 64px;
-`;
 const ProjectBox = styled.ul`
     margin-top: 64px;
 `;
@@ -28,14 +25,22 @@ const MypageContainer = () => {
     ]);
 
     return (
-        <MypageWrap>
+        <div>
             <CorporationInfor />
             <ProjectBox>
             {projectItems.map((row, index) =>
-                <CorporationItem key={`${index}_key`} projectLogo={row.projectLogo} projectName={row.projectName} price={row.price} closingDate={row.closingDate} registerBugCount={row.registerBugCount} adoptBugCount={row.adoptBugCount}/>
+                <CorporationItem
+                    key={`${index}_key`}
+                    projectLogo={row.projectLogo}
+                    projectName={row.projectName}
+                    price={row.price}
+                    closingDate={row.closingDate}
+                    registerBugCount={row.registerBugCount}
+                    adoptBugCount={row.adoptBugCount}
+                />
             )}
             </ProjectBox>
-        </MypageWrap>
+        </div>
     );
 };
 

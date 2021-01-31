@@ -58,7 +58,7 @@ const CorporationItem = ({...props}) => {
                         <p>채택된 버그: {props.adoptBugCount}</p>
                     </BugStateBox>
                 </LogoBox>
-                <ProjectName>{props.projectName} - {props.closingDate}일 남음</ProjectName>
+                <ProjectName>{props.projectName} - {props.closingDate}일 남음</ProjectName>
             </ItemWrap>
         </>
     );
