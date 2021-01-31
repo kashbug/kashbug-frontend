@@ -17,7 +17,8 @@ const WrapDiv = styled.div`
 	position:relative;height:100vh;
 `;
 const CenterDiv = styled.div`
-    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;
+    /* position:absolute;top:50%;left:50%;transform:translate(-50%,-50%); */
+    width:100%;
 `;
 
 interface TabPanelProps {

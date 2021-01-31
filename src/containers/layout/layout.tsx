@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         container: {
 			padding: '88px 0',
-			minHeight: 'calc(100vh - 88px)'
+			minHeight: '100vh'
         },
     }),
 );
