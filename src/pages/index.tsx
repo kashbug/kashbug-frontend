@@ -8,7 +8,7 @@ const Index = () => {
 	return (
 		<>
 			<NavBar />
-			<Slider images={['/benner.jpg']} height={'calc(100vh - 240px)'} margin={'88px 48px 0;'} />
+			<Slider maxWidth="800px" />
 			<Layout>
 				<IndexContainer />
 			</Layout>

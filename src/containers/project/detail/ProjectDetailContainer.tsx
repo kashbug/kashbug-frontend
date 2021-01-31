@@ -12,7 +12,7 @@ const ProjectDetailContainer = () => {
         <Wrap>
             <Info />
             <div style={{ marginTop: '30px' }}>
-                <Slider images={['/img_notfound.png']} height="300px" radius="10px" />
+                <Slider images={['/img_notfound.png']} maxWidth="300px" radius="10px" />
             </div>
             <FormControl style={{ width: '100%', marginTop: '30px' }}>
                 <TextField

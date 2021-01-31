@@ -1,6 +1,6 @@
 export interface ProjectAdd {
     name: string,
-    category: string[],
+    category: any[],
     contents: string,
     reward: number,
     reward_duration: number,
