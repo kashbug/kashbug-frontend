@@ -5,7 +5,7 @@ import MyContainer from "../../containers/person/MyContainer";
 const My = () => {
     return (
         <>
-            <NavBar />
+            <NavBar color="#56A902" textColor="#fff" />
             <Layout>
                 <MyContainer />
             </Layout>
