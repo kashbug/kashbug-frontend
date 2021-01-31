@@ -18,6 +18,13 @@ const SilderWrapper = styled.div<WrapProps>`
     max-width: ${(props:any) => props.maxWidth || '320px'};
     border-radius: ${(props:any) => props.radius || '0px'};
 `;
+const BennerText = styled.p`
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    font-size: 2rem;
+    text-shadow: 0.3px 0.3px #ffffff, 2px 2px #aaaaaa;
+`;
 SwiperCore.use([Navigation, Pagination]);
 
 const Slider = ({ images, maxWidth, radius }: SliderProps) => {
@@ -39,7 +46,8 @@ const Slider = ({ images, maxWidth, radius }: SliderProps) => {
                 {
                     imageData.length > 0 ? imageData : (
                         <SwiperSlide tag="li" key={`slide`}>
-                            <img src="/img_notfound.png" style={{ height: 'auto', width:'100%' }}/>
+                            <img src="/benner.png" style={{ height: 'auto', width:'100%' }}/>
+                            <BennerText>소프트웨어 테스팅 플랫폼 Kashbug은<br/>소프트웨어 기업이 테스터와 사용자를 만나는 공간!</BennerText>
                         </SwiperSlide>
                     )
                 }

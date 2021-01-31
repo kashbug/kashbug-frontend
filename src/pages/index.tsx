@@ -8,7 +8,7 @@ const Index = () => {
 	return (
 		<>
 			<NavBar />
-			<Slider maxWidth="800px" />
+			<Slider maxWidth="100%" />
 			<Layout>
 				<IndexContainer />
 			</Layout>
