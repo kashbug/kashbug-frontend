@@ -1,5 +1,8 @@
 html,
-body {
+body,
+dl,
+dt,
+dd {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -14,9 +17,13 @@ a {
 p {
   margin: 0;
 }
-ul {
+ul, ol, dl, li {
   margin: 0;
   padding: 0;
+  list-style: none;
+}
+ul, ol, dl, li {
+  list-style: none;
 }
 * {
   box-sizing: border-box;

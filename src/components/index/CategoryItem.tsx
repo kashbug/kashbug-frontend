@@ -1,14 +1,14 @@
+// next
+import  Link from 'next/link';
+
 import styled from 'styled-components';
 
 const ItemWrap = styled.li`
     display: inline-block;
-    padding: 16px;
-    &:first-child {
-        padding-left: 0;
-    }
-    &:last-child {
-        padding-right: 0;
-    }
+    padding: 23px;
+`;
+const LinkBox = styled.a`
+    display: block;
 `;
 const LogoBox = styled.div`
     position: relative;
@@ -18,11 +18,11 @@ const LogoBox = styled.div`
     height: 200px;
     align-items: center;
     justify-content: center;
-    background-color: #491651;
+    border: 1px solid #75D701 ;
     border-radius: 16px;
 `;
 const Logo = styled.img`
-
+    width: 120px;
 `;
 const ClosingDate = styled.p`
     position: absolute;
@@ -37,18 +37,22 @@ const ProjectName = styled.p`
     display: flex;
     justify-content: center;
     padding: 8px 0;
-    font-size: 1rem;
+    font-size: 0.9rem;
 `;
 
 const CategoryItem = ({...props}) => {
     return (
         <>
             <ItemWrap>
-                <LogoBox>
-                    <img src={props.projectLogo} alt="Logo"/>
-                    <ClosingDate>{props.closingDate}</ClosingDate>
-                </LogoBox>
-                <ProjectName>{props.projectName}</ProjectName>
+                <Link href={props.href} passHref>
+                    <LinkBox>
+                        <LogoBox>
+                            <Logo src={props.projectLogo} alt="Logo"/>
+                            <ClosingDate>{props.closingDate}</ClosingDate>
+                        </LogoBox>
+                        <ProjectName>{props.projectName}</ProjectName>
+                    </LinkBox>
+                </Link>
             </ItemWrap>
         </>
     );
