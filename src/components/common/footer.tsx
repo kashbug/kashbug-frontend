@@ -24,7 +24,7 @@ const FooterMenu = styled.li`
         margin-right: 0;
     }
 `;
-const NavLink = ({ href, name }) => {
+const NavLink = ({ href, name }:any) => {
     const FooterLink = styled.a`
         font-size: 1rem;
         color: #F8F8FF;
