@@ -27,7 +27,12 @@ const ListWrap = styled.div`
     margin-top:60px;
     padding: 20px;
 `;
-const CategoryBtn = styled.h4`
+interface ColProps {
+    color?: string;
+    textColor?: string;
+    left?: string;
+};
+const CategoryBtn = styled.h4<ColProps>`
     position: absolute;
     background-color:${(props:any) => props.color || '#56A902'};
     border-radius: 10px 10px 0 0;
