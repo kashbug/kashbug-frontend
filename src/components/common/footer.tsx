@@ -3,7 +3,6 @@ import  Link from 'next/link';
 // stled-components
 import styled from 'styled-components';
 // mui
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { Container } from '@material-ui/core';
 
 const FooterWrap = styled.div`
