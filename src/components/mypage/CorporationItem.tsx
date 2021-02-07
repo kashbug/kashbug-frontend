@@ -47,7 +47,6 @@ const ProjectName = styled.p`
 const toDay = new Date();
 const CorporationItem = ({...props}) => {
     const [count, setCount] = useState(0);
-    console.log(props.closingDate);
     return (
         <>
             <ItemWrap>
