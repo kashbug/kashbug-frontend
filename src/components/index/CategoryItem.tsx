@@ -33,10 +33,18 @@ const ClosingDate = styled.p`
     text-shadow: -1px 0 #ffffff, 0 1px #ffffff, 1px 0 #ffffff, 0 -1px #ffffff;
     font-size: 0.875rem;
 `;
-const ProjectName = styled.p`
+const TitleBox = styled.div`
     display: flex;
-    justify-content: center;
     padding: 8px 0;
+`;
+const ProjectName = styled.p`
+    flex: 1 1;
+    text-align: center;
+    font-size: 0.9rem;
+`;
+const Price = styled.p`
+    flex: 1 1;
+    text-align: right;
     font-size: 0.9rem;
 `;
 
@@ -50,7 +58,10 @@ const CategoryItem = ({...props}) => {
                             <Logo src={props.projectLogo} alt="Logo"/>
                             <ClosingDate>{props.closingDate}</ClosingDate>
                         </LogoBox>
-                        <ProjectName>{props.projectName}</ProjectName>
+                        <TitleBox>
+                            <ProjectName>{props.projectName}</ProjectName>
+                            <Price>금액: {props.price}</Price>
+                        </TitleBox>
                     </LinkBox>
                 </Link>
             </ItemWrap>
