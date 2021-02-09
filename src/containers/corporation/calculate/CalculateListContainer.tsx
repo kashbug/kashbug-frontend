@@ -10,6 +10,16 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
+interface CalculateItems {
+    idx: number;
+    profile: string;
+    bugType: number;
+    project: string;
+    deadLineDate: string;
+    writer: string;
+    state: number;
+}
+
 const useStyles = makeStyles((theme) => ({
     table: {
         minWidth: 650,
@@ -34,22 +44,12 @@ const BugType = styled.p`
 const Cell = styled.p`
     display: inline;
     padding: 4px 8px;
-    background-color: ${(props:any) => props.bgc || ''};
+    background-color: ${(props:any) => props.color || ''};
     border-radius: 16px;
 `;
 
-interface calculateItems {
-    idx: Number;
-    profile: String;
-    bugType: Number;
-    project: String;
-    deadLineDate: String;
-    writer: String;
-    state: Number;
-}
-
 const CalculateListContainer = () => {
-    const [calculateItems, setCalculateItems] = useState<calculateItems[]>([
+    const [calculateItems, setCalculateItems] = useState<CalculateItems[]>([
         {idx: 0, profile: '/logo_1.png', bugType: 0, project: '이미지보정 앱', deadLineDate: '2020/01/01', writer: 'jungjh', state: 0},
         {idx: 1, profile: '/logo_1.png', bugType: 1, project: '이미지보정 앱', deadLineDate: '2020/01/01', writer: 'jungjh', state: 1},
         {idx: 2, profile: '/logo_1.png', bugType: 2, project: '이미지보정 앱', deadLineDate: '2020/01/01', writer: 'jungjh', state: 2},
@@ -101,12 +101,12 @@ const CalculateListContainer = () => {
                             <TableCell align="center">{row.deadLineDate}</TableCell>
                             <TableCell align="center">{row.writer}</TableCell>
                             <TableCell align="center">
-                                {row.state === 0 && <Cell bgc={'#ffeb3b'}>미확인</Cell>}
-                                {row.state === 1 && <Cell bgc={'#c6ff00'}>입금대기</Cell>}
-                                {row.state === 2 && <Cell bgc={'#8ab200'}>채택</Cell>}
-                                {row.state === 3 && <Cell bgc={'#52b202'}>입금완료</Cell>}
-                                {row.state === 4 && <Cell bgc={'#b2102f'}>입금기한지남</Cell>}
-                                {row.state === 5 && <Cell bgc={'#ff1744'}>거절</Cell>}
+                                {row.state === 0 && <Cell color="#ffeb3b">미확인</Cell>}
+                                {row.state === 1 && <Cell color="#c6ff00">입금대기</Cell>}
+                                {row.state === 2 && <Cell color="#8ab200">채택</Cell>}
+                                {row.state === 3 && <Cell color="#52b202">입금완료</Cell>}
+                                {row.state === 4 && <Cell color="#b2102f">입금기한지남</Cell>}
+                                {row.state === 5 && <Cell color="#ff1744">거절</Cell>}
                             </TableCell>
                         </TableRow>
                     )})}
