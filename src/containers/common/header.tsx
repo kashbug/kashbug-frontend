@@ -23,9 +23,9 @@ const Logo = () => {
         color: #2ecc71;
     `;
     return (
-        <a href={'/'} passHref>
+        <Link href={'/'} passHref>
             <Box><Color>Kash</Color>bug</Box>
-        </a>
+        </Link>
     )
 }
 const MenuList = styled.ul`
