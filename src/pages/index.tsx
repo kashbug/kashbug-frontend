@@ -1,7 +1,9 @@
 import Header from "../containers/common/header"; 
 import Benner from "../components/index/benner";
 import Intro from "../components/index/intro";
-import IndexContainer from "../containers/index/IndexContainer";
+import AddProject from "../containers/index/addproject";
+import Explanation from "../components/index/explanation";
+import Projects from "../containers/index/projectlist";
 import Footer from '../components/common/footer';
 
 const Index = () => {
@@ -10,7 +12,9 @@ const Index = () => {
 			<Header />
 			<Benner />
 			<Intro />
-			<IndexContainer />
+			<AddProject />
+			<Explanation />
+			<Projects />
 			<Footer/>
 		</>
 	)
