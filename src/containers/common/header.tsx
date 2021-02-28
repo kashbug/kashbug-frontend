@@ -14,12 +14,12 @@ const Wrap = styled.header`
     align-items: center;
 `;
 const Logo = () => {
-    const Link = styled.a`
+    const Box = styled.a`
         font-size: 30px;
     `;
     return (
         <Link href={'/'} passHref>
-            <Link>Kashbug</Link>
+            <Box>Kashbug</Box>
         </Link>
     )
 }
@@ -29,12 +29,14 @@ const MenuList = styled.ul`
 const Menu = ({ href, name }: MenuProps) => {
     const Menu = styled.li`
     `;
-    const Link = styled.a`
+    const Box = styled.a`
         font-size: 16px;
     `;
     return (
         <Menu>
-            <Link href={href} passHref>{name}</Link>
+            <Link href={'/'} passHref>
+                <Box>{name}</Box>
+            </Link>
         </Menu>
     )
 }
