@@ -42,7 +42,7 @@ const Menu = ({ href, name }: MenuProps) => {
     )
 }
 const InforList = styled.ul`
-    margin-top: 41px;
+    margin-top: 40px;
     display: flex;
     justify-content: center;
     align-content: center;

@@ -7,20 +7,25 @@ interface MenuProps {
 }
 
 const Wrap = styled.header`
-    margin: 0 320px;
+    max-width: 1304px;
     height: 80px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 `;
 const Logo = () => {
-    const Link = styled.a`
+    const Box = styled.span`
         font-size: 30px;
+        font-family: Roboto, sans-serif;
+    `;
+    const Color = styled.span`
+        color: #2ecc71;
     `;
     return (
-        <Link href={'/'} passHref>
-            <Link>Kashbug</Link>
-        </Link>
+        <a href={'/'} passHref>
+            <Box><Color>Kash</Color>bug</Box>
+        </a>
     )
 }
 const MenuList = styled.ul`
@@ -28,6 +33,13 @@ const MenuList = styled.ul`
 `;
 const Menu = ({ href, name }: MenuProps) => {
     const Menu = styled.li`
+        margin: 0 16px;
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
     `;
     const Link = styled.a`
         font-size: 16px;
