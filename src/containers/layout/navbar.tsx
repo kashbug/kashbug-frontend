@@ -38,7 +38,7 @@ const NavBar = ({ position }: NavBarProps) => {
     return (
         <>
             <AppBar className={classes.headerWrap}>
-                <Container maxWidth="xl">
+                <Container maxWidth="lg">
                     <Toolbar className={classes.headerBox}>
                         <Link href="/">
                             <a className={classes.title}>KashBug</a>

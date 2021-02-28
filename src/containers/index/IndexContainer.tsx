@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import CategoryItem from '../../components/index/CategoryItem';
+import CategoryItem from '../../components/index/categoryItem';
 
 const IndexListWrap = styled.ul`
 `;
