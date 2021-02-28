@@ -37,7 +37,7 @@ const Project = ({href, idx, corporationName, projectName, participants, price, 
         width: 306px;
         background-color: #fbfbff;
     `;
-    const Link = styled.a`
+    const Box = styled.a`
     `;
     const CorporationName = styled.p`
         font-size: 14px;
@@ -72,10 +72,12 @@ const Project = ({href, idx, corporationName, projectName, participants, price, 
         <Project>
             <div></div>
             <Link href={href} passHref>
-                <CorporationName>{corporationName}</CorporationName>
-                <ProjectName>{projectName}</ProjectName>
-                <Participants><img /><span>{participants}</span>명 참여중</Participants>
-                <ClosingDate>{closingDate} 종료<Checker /></ClosingDate>
+                <Box>
+                    <CorporationName>{corporationName}</CorporationName>
+                    <ProjectName>{projectName}</ProjectName>
+                    <Participants><img /><span>{participants}</span>명 참여중</Participants>
+                    <ClosingDate>{closingDate} 종료<Checker /></ClosingDate>
+                </Box>
             </Link>
         </Project>
     )
