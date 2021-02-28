@@ -61,7 +61,7 @@ const Project = ({href, idx, corporationName, projectName, participants, price, 
     `;
     const Checker = styled.div`
         position: absolute;
-        top: 0;
+        top: 50%;
         right: 0;
         transform: translateY(-50%);
         width: 24px;
