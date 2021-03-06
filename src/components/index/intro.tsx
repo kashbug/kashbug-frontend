@@ -13,16 +13,16 @@ const IntroTitle = styled.p`
     font-size: 40px;
     font-weight: bolder;
 `;
+const LogoBox = styled.span`
+    font-size: 48px;
+    font-family: Roboto, sans-serif;
+`;
+const LogoAfter = styled.span`
+    color: #2ecc71;
+`;
 const Logo = () => {
-    const Box = styled.span`
-        font-size: 48px;
-        font-family: Roboto, sans-serif;
-    `;
-    const Color = styled.span`
-        color: #2ecc71;
-    `;
     return (
-        <Box><Color>Kash</Color>bug</Box>
+        <LogoBox><LogoAfter>Kash</LogoAfter>bug</LogoBox>
     )
 }
 const IntroText = styled.p`

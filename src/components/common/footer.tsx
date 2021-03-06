@@ -20,27 +20,27 @@ const MenuList = styled.ul`
     justify-content: center;
     align-content: center;
 `;
+const MenuBox = styled.li`
+    margin: 0 24px;
+    &:first-child {
+        margin-left: 0;
+    }
+    &:last-child {
+        margin-right: 0;
+    }
+`;
+const MenuAnchor = styled.a`
+    font-size: 16px;
+    font-weight: bold;
+    color: #444444;
+`;
 const Menu = ({ href, name }: MenuProps) => {
-    const Menu = styled.li`
-        margin: 0 24px;
-        &:first-child {
-            margin-left: 0;
-        }
-        &:last-child {
-            margin-right: 0;
-        }
-    `;
-    const Box = styled.a`
-        font-size: 16px;
-        font-weight: bold;
-        color: #444444;
-    `;
     return (
-        <Menu>
+        <MenuBox>
             <Link href={href} passHref>
-                <Box>{name}</Box>
+                <MenuAnchor>{name}</MenuAnchor>
             </Link>
-        </Menu>
+        </MenuBox>
     )
 }
 const InforList = styled.ul`

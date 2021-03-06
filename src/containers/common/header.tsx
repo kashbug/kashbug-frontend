@@ -14,42 +14,42 @@ const Wrap = styled.header`
     justify-content: space-between;
     align-items: center;
 `;
+const LogoBox = styled.a`
+    font-size: 30px;
+    font-family: Roboto, sans-serif;
+`;
+const LogoAfter = styled.span`
+    color: #2ecc71;
+`;
 const Logo = () => {
-    const Box = styled.a`
-        font-size: 30px;
-        font-family: Roboto, sans-serif;
-    `;
-    const Color = styled.span`
-        color: #2ecc71;
-    `;
     return (
         <Link href={'/'} passHref>
-            <Box><Color>Kash</Color>bug</Box>
+            <LogoBox><LogoAfter>Kash</LogoAfter>bug</LogoBox>
         </Link>
     )
 }
 const MenuList = styled.ul`
     display: flex;
 `;
+const MenuBox = styled.li`
+    margin: 0 16px;
+    &:first-child {
+        margin-left: 0;
+    }
+    &:last-child {
+        margin-right: 0;
+    }
+`;
+const MenuAnchor = styled.a`
+    font-size: 16px;
+`;
 const Menu = ({ href, name }: MenuProps) => {
-    const Menu = styled.li`
-        margin: 0 16px;
-        &:first-child {
-            margin-left: 0;
-        }
-        &:last-child {
-            margin-right: 0;
-        }
-    `;
-    const Box = styled.a`
-        font-size: 16px;
-    `;
     return (
-        <Menu>
+        <MenuBox>
             <Link href={'/'} passHref>
-                <Box>{name}</Box>
+                <MenuAnchor>{name}</MenuAnchor>
             </Link>
-        </Menu>
+        </MenuBox>
     )
 }
 
