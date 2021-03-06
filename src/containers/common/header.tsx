@@ -15,7 +15,7 @@ const Wrap = styled.header`
     align-items: center;
 `;
 const Logo = () => {
-    const Box = styled.span`
+    const Box = styled.a`
         font-size: 30px;
         font-family: Roboto, sans-serif;
     `;
