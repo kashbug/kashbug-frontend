@@ -1,7 +1,7 @@
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
-const useStyles = makeStyles((theme: any) =>
+const useStyles = makeStyles(() =>
     createStyles({
         container: {
 			padding: '88px 0',
