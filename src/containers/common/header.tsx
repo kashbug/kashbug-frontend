@@ -46,7 +46,7 @@ const MenuAnchor = styled.a`
 const Menu = ({ href, name }: MenuProps) => {
     return (
         <MenuBox>
-            <Link href={'/'} passHref>
+            <Link href={href} passHref>
                 <MenuAnchor>{name}</MenuAnchor>
             </Link>
         </MenuBox>
@@ -62,7 +62,8 @@ const Header = () => {
                 </h1>
                 <nav>
                     <MenuList>
-                        <Menu href="/" name="로그인" />
+                        <Menu href="/login" name="로그인" />
+                        <Menu href="/signup" name="회원가입" />
                     </MenuList>
                 </nav>
             </Wrap>
