@@ -1,122 +1,239 @@
+import React, { useState } from 'react';
 import styled from 'styled-components';
-//  mui
-import {
-    FormControl,
-    TextField,
-    Button,
-    Select,
-    InputLabel,
-} from '@material-ui/core';
+// next
+import  Link from 'next/link';
 
-const SignUpWrap = styled.div`
-    position:relative;height:100vh;text-align:center;
-`;
-const SignUp = styled.div`
-    position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);max-width:440px;width:100%;padding:20px;
-`;
-const SelectBox = styled.div`
-    margin-top:20px;overflow:hidden;
-`;
-const LeftBox = styled.strong`
-    float:left; line-height: 30px;
-`;
-const RightBox = styled.div`
-    float:right;
-`;
-interface ImageProps {
-    src: string;
-    alt: string;
-    id: string;
+interface AgeProps {
+    idx: Number;
+    age: Number;
 }
-const Image = styled.img.attrs<ImageProps>(props => ({
-    src: props.src,
-    alt: props.alt,
-    id: props.id,
-  }))`
-    margin-top:20px;width:80px;height:80px;border-radius:10px;
+interface CategoriesProps {
+    idx: Number;
+    categories: String;
+}
+
+const Wrap = styled.div`
+    max-width: 376px;
+    min-height: calc(100vh - 257px);
+    margin: 0 auto;
+    padding: 32px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;
-const Notice = styled.div`
-    font-size:0.5rem;font-weight:bold;color: #FF0000;
+const SignupBox = styled.div`
+    padding: 56px 24px;
+    width: 100%;
+    box-shadow: 0 0 10px #dddddd;
 `;
-const Category = styled.ul`
-    width:100%;height:50px;border-radius:10px;background-color:#EAEAEA;list-style:none;margin:20px 0;
-    padding:10px;
+const LogoBox = styled.p`
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Roboto, sans-serif;
 `;
-const CategoryLi = styled.li`
-    float: left;padding:5px;color:#0054FF;font-weight:bold;
+const LogoAfter = styled.span`
+    color: #2ecc71;
 `;
-const SignupContainer = () => {
+const Logo = () => {
     return (
-        <SignUpWrap>
-            <SignUp>
-                <h2>회원가입</h2>
-                <SelectBox>
-                    <LeftBox>가입형태</LeftBox>
-                    <RightBox>
-                        <Button size="small" variant="contained" color="primary">개인</Button>
-                        <Button size="small" variant="contained" style={{ marginLeft:'5px' }} disabled>기업</Button>
-                    </RightBox>
-                </SelectBox>
-                <Image />
-                <Notice>150x150, 5MB 이하 이미지만 업로드가 가능합니다.</Notice>
-                <FormControl style={{ width: '100%' }}>
-                    <TextField id="standard-basic" label="아이디" />
-                    <TextField id="standard-basic" label="비밀번호" />
-                    <TextField id="standard-basic" label="비밀번호 확인" />
-                </FormControl>
-                <SelectBox>
-                    <LeftBox>성별</LeftBox>
-                    <RightBox>
-                        <Button size="small" variant="contained" color="primary">남자</Button>
-                        <Button size="small" variant="contained" style={{ marginLeft:'5px' }} disabled>여자</Button>
-                        <Button size="small" variant="contained" style={{ marginLeft:'5px' }} disabled>기타</Button>
-                    </RightBox>
-                </SelectBox>
-                <FormControl style={{ width: '100%' }}>
-                    <TextField id="standard-basic" label="이메일" />
-                    <TextField id="standard-basic" label="연락처" />
-                </FormControl>
-                <FormControl style={{ width: '45%', marginRight: '10px' }}>
-                    <InputLabel htmlFor="age-native-simple">나이</InputLabel>
-                    <Select
-                        native
-                        inputProps={{
-                            name: 'age',
-                            id: 'age-native-simple',
-                        }}
-                    >
-                        <option aria-label="None" value="" />
-                        <option value={10}>Ten</option>
-                        <option value={20}>Twenty</option>
-                        <option value={30}>Thirty</option>
-                    </Select>
-                </FormControl>
-                <FormControl style={{ width: '45%' }}>
-                    <InputLabel htmlFor="category">관심사</InputLabel>
-                    <Select
-                        native
-                        inputProps={{
-                            name: 'category',
-                            id: 'category',
-                        }}
-                    >
-                        <option aria-label="None" value="" />
-                        <option value={10}>Ten</option>
-                        <option value={20}>Twenty</option>
-                        <option value={30}>Thirty</option>
-                    </Select>
-                </FormControl>
-                <Category>
-                    <CategoryLi>#게임</CategoryLi>
-                    <CategoryLi>#영화</CategoryLi>
-                </Category>
-                <div style={{ marginTop: '20px' }}>
-                    <Button variant="contained" color="primary">확인</Button>
-                    <Button variant="contained" color="secondary" style={{ marginLeft: '10px' }}>취소</Button>
-                </div>
-            </SignUp>
-        </SignUpWrap>
+        <LogoBox><LogoAfter>Kash</LogoAfter>bug</LogoBox>
+    )
+}
+const ProfileBox = styled.div`
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: 20px auto;
+`;
+const ProfileImg = styled.img`
+    min-width: 140px;
+    min-height: 140px;
+    border: 1px solid #333333;
+    border-radius: 8px;
+`;
+const FileLabel = styled.label`
+    position: absolute;
+    bottom: -6px;
+    right: -6px;
+    width: 20px;
+    height: 20px;
+    background-color: #333333;
+    border-radius: 50%;
+`;
+const FileInput = styled.input`
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip:rect(0,0,0,0);
+    border: 0;
+`;
+const Profile = () => {
+    return (
+        <ProfileBox>
+            <ProfileImg src="#" alt="profile" />
+            <FileLabel>
+                <FileInput type="file"/>
+            </FileLabel>
+        </ProfileBox>
+    )
+}
+const FileInfro = styled.p`
+    text-align: center;
+    font-size: 12px;
+    color: #fc4949;
+`;
+const TextInput = styled.input`
+    margin-top: 8px;
+    padding: 12px 16px;
+    width: 100%;
+    height: 34px;
+    background-color: #F5F5F5;
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+`;
+const GenderBox = styled.div`
+    display: flex;
+    margin-top: 32px;
+`;
+const GenderLabel = styled.label`
+    margin-left: ${(props) => props.margin || "0"}; 
+    flex: 1 1;
+    background-color: #F5F5F5;
+    border-radius: 8px;
+    text-align: center;
+    color: #777777;
+    line-height: 2.4;
+`;
+const GenderInput = styled.input`
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip:rect(0,0,0,0);
+    border: 0;
+    &:checked + label {
+        background-color: #2ecc71;
+        color: #ffffff;
+    }
+`;
+const GenderSelect = () => {
+    return (
+        <GenderBox>
+            <GenderInput id="Gender-man" type="radio" name="Gender" value="남자" />
+            <GenderLabel for="Gender-man" margin="0px">남자</GenderLabel>
+            <GenderInput id="Gender-woman" type="radio" name="Gender" value="여자" />
+            <GenderLabel for="Gender-woman" margin="8px">여자</GenderLabel>
+            <GenderInput id="Gender-non" type="radio" name="Gender" value="비공개" />
+            <GenderLabel for="Gender-non" margin="8px">비공개</GenderLabel>
+        </GenderBox>
+    )
+}
+const SelectInput = styled.select`
+    margin-top: 8px;
+    padding: 12px 16px;
+    width: 100%;
+    height: 42px;
+    background-color: #F5F5F5;
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+`;
+const TagList = styled.ul`
+    padding: 16px 0 24px;
+    font-size: 0;
+`;
+const Tag = styled.li`
+    display: inline-block;
+    margin-right: 4px;
+    padding: 4px 8px;
+    background-color: #F5F5F5;
+    border: 1px solid #333333;
+    border-radius: 16px;
+    font-size: 12px;
+`;
+const Submit = styled.button`
+    margin-top: 8px;
+    padding: 12px 16px;
+    width: 100%;
+    background-color: #2ecc71;
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    color: #ffffff;
+    cursor: pointer;
+    :after {
+        content: '';
+        display: inline-block;
+        height: 10px;
+        vertical-align: middle;
+    }
+`;
+const LoginContainer = () => {
+    const [ageItems] = useState<AgeProps[]>([
+        {idx: 0, age: 1964},
+        {idx: 1, age: 1965},
+        {idx: 2, age: 1966},
+        {idx: 3, age: 1967},
+        {idx: 4, age: 1999},
+        {idx: 5, age: 1999},
+        {idx: 6, age: 2000},
+        {idx: 7, age: 2001},
+        {idx: 8, age: 2002},
+        {idx: 9, age: 2003},
+        {idx: 10, age: 2004},
+        {idx: 11, age: 2005},
+        {idx: 12, age: 2006},
+        {idx: 13, age: 2007},
+        {idx: 14, age: 2008},
+        {idx: 15, age: 2009},
+        {idx: 16, age: 2010},
+    ]);
+    const [categoriesItems] = useState<CategoriesProps[]>([
+        {idx: 0, categories: '게임'},
+        {idx: 1, categories: '영화'},
+        {idx: 2, categories: '만화'},
+    ]);
+    return (
+        <>
+            <Wrap>
+                <SignupBox>
+                    <Logo />
+                    <Profile />
+                    <FileInfro><strong>150x150, 5MB 이하</strong>의 이미지를 올려주세요.</FileInfro>
+                    <TextInput type="text" placeholder="아이디"/>
+                    <TextInput type="password" placeholder="비밀번호"/>
+                    <TextInput type="password" placeholder="비밀번호 확인"/>
+                    <GenderSelect />
+                    <TextInput type="text" placeholder="이메일"/>
+                    <TextInput type="text" placeholder="연락처"/>
+                    <SelectInput>
+                        <option value="" disabled selected>출생년도</option>
+                        {ageItems.map((row, index) => {
+                            return <option key={`${index}_key`}>{row.age}</option>
+                        })}
+                    </SelectInput>
+                    <SelectInput>
+                        <option value="" disabled selected>관심사</option>
+                        {categoriesItems.map((row, index) => {
+                            return <option key={`${index}_key`}>{row.categories}</option>
+                        })}
+                    </SelectInput>
+                    <TagList>
+                        <Tag>#게임</Tag>
+                        <Tag>#영화</Tag>
+                    </TagList>
+                    <Submit>회원가입</Submit>
+                </SignupBox>
+            </Wrap>
+        </>
     );
 };
 
-export default SignupContainer;
+export default LoginContainer;
