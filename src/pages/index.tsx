@@ -1,17 +1,20 @@
-import Layout from "../containers/layout/layout"
-import IndexContainer from "../containers/index/IndexContainer";
-import NavBar from "../containers/layout/navbar"; 
-import Slider from '../components/slider';
+import Header from "../containers/common/header"; 
+import Benner from "../components/index/benner";
+import Intro from "../components/index/intro";
+import AddProject from "../containers/index/addproject";
+import Explanation from "../components/index/explanation";
+import Projects from "../containers/index/projectlist";
 import Footer from '../components/common/footer';
 
 const Index = () => {
 	return (
 		<>
-			<NavBar />
-			<Slider maxWidth="100%" />
-			<Layout>
-				<IndexContainer />
-			</Layout>
+			<Header />
+			<Benner />
+			<Intro />
+			<AddProject />
+			<Explanation />
+			<Projects />
 			<Footer/>
 		</>
 	)

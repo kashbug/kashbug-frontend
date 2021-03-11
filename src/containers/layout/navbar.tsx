@@ -34,8 +34,9 @@ const NavBar = ({ color, textColor }: NavBarProps) => {
     const classes = useStyles();
     return (
         <>
-            <AppBar className={classes.headerWrap} style={{ backgroundColor: color || '#fff', color: textColor || '#3B4E32', position: 'fixed' }}>
-                <Container maxWidth="xl">
+            <AppBar className={classes.headerWrap}>
+                <Container maxWidth="lg">
+
                     <Toolbar className={classes.headerBox}>
                         <Link href="/">
                             <a className={classes.title}>KashBug</a>

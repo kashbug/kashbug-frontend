@@ -1,76 +1,142 @@
 import styled from 'styled-components';
 // next
 import  Link from 'next/link';
-// mui
-import {
-    FormControl,
-    TextField,
-    Button,
-} from '@material-ui/core';
 
-const LoginWrap = styled.div`
-    position:relative;height:100vh;text-align:center;
+const Wrap = styled.div`
+    max-width: 376px;
+    min-height: calc(100vh - 257px);
+    margin: 0 auto;
+    padding: 32px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;
-const Login = styled.div`
-    position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);max-width:340px;width:100%;padding:20px;
+const LoginBox = styled.div`
+    padding: 56px 24px;
+    width: 100%;
+    box-shadow: 0 0 10px #dddddd;
 `;
-const Helper = styled.div`
-    margin-top:10px;
-    &::after {content:'';display:block;clear:both;}
+const LogoBox = styled.p`
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Roboto, sans-serif;
 `;
-const Find = styled.a`
-    float: left; font-size:0.5rem;font-weight:bold;cursor: pointer;
+const LogoAfter = styled.span`
+    color: #2ecc71;
 `;
-const Signup = styled.a`
-    float: right; font-size:0.5rem;font-weight:bold;cursor: pointer;color:#0054FF;
-`;
-const BtnWrap = styled.div`
-    margin-top:20px;
-`;
-const Social = styled.div`
-    margin-top:20px;text-align:right;
-`;
-interface SocialIcon {
-    src: string;
-    alt: string;
-    id: string;
+const Logo = () => {
+    return (
+        <LogoBox><LogoAfter>Kash</LogoAfter>bug</LogoBox>
+    )
 }
-const SocialIcon = styled.img.attrs<SocialIcon>(props => ({
-    src: props.src,
-    alt: props.alt,
-    id: props.id,
-  }))`
-    width:40px;height:40px;margin:5px;border-radius:10px;
-    opacity: 0.5;
+const SignupBox = styled.p`
+    margin-top: 28px;
+    margin-bottom: 12px;
+    text-align: right;
+    font-size: 12px;
+    font-weight: bold;
+    color: #2ecc71;
+`;
+const Signup = () => {
+    return (
+        <SignupBox>
+            <Link href={'/signup'} passHref>
+                <a>Kashbug 멤버 가입 ></a>
+            </Link>
+        </SignupBox>
+    )
+}
+const IdInput = styled.input`
+    margin-top: 8px;
+    padding: 12px 16px;
+    width: 100%;
+    height: 34px;
+    background-color: #F5F5F5;
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+`;
+const Submit = styled.button`
+    margin-top: 8px;
+    padding: 12px 16px;
+    width: 100%;
+    background-color: #2ecc71;
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    color: #ffffff;
+    cursor: pointer;
+    :after {
+        content: '';
+        display: inline-block;
+        height: 10px;
+        vertical-align: middle;
+    }
+`;
+const FindUserBox = styled.a`
+    display: block;
+    margin-top: 36px;
+    text-align: center;
+    font-size: 12px;
+    color: #666666;
+`;
+const FindUserHighlight = styled.span`
+    font-weight: bold;
+`;
+const FindUser = () => {
+    return (
+        <Link href={'/'} passHref>
+            <FindUserBox><FindUserHighlight>아이디/비밀번호</FindUserHighlight>가 기억이 안나시나요?</FindUserBox>
+        </Link>
+    )
+}
+const SNSInfor = styled.p`
+    margin-top: 12px;
+    padding: 32px 0 12px;
+    border-top: 1px solid #E6E6E6;
+    text-align: center;
+    font-size: 12px;
+`;
+const SNSBox = styled.div`
+    margin-top: 8px;
+    display: flex;
+`;
+const SNSLogin = styled.button`
+    flex: 1 1;
+    margin-left: 8px;
+    padding: 12px 16px;
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    background-color: ${(props) => props.background || ''};
+    color: ${(props) => props.color || '#333333'};
+    font-weight: bold;
+    cursor: pointer;
+    :first-child {
+        margin-left: 0;
+    }
 `;
 const LoginContainer = () => {
     return (
-        <LoginWrap>
-            <Login>
-                <h2>로그인</h2>
-                <Social>
-                    <SocialIcon src="/naver.png" alt="naver" id="naver" />
-                    <SocialIcon src="/kakao.png" alt="kakao" id="kakao" />
-                    <SocialIcon src="/facebook.png" alt="face" id="face" />
-                </Social>
-                <FormControl style={{ width: '100%' }}>
-                    <TextField id="standard-basic" label="아이디" />
-                    <TextField id="standard-basic" label="비밀번호" />
-                </FormControl>
-                <Helper>
-                    <Link href="/findId">
-                        <Find>비밀번호/아이디 찾기</Find>
-                    </Link>
-                    <Link href="/signup">
-                        <Signup>회원가입</Signup>
-                    </Link>
-                </Helper>
-                <BtnWrap>
-                    <Button variant="contained" color="primary">확인</Button>
-                    <Button variant="contained" color="secondary" style={{ marginLeft: '10px' }}>취소</Button>
-                </BtnWrap>
-            </Login>
-        </LoginWrap>
+        <>
+            <Wrap>
+                <LoginBox>
+                    <Logo />
+                    <Signup />
+                    <IdInput type="text" placeholder="아이디"/>
+                    <IdInput type="password" placeholder="비밀번호"/>
+                    <Submit>로그인</Submit>
+                    <FindUser />
+                    {/* <SNSInfor>SNS 계정으로 로그인하기</SNSInfor>
+                    <SNSBox>
+                        <SNSLogin background="#3B5998" color="#ffffff">페이스북</SNSLogin>
+                        <SNSLogin background="#F7E600">카카오</SNSLogin>
+                        <SNSLogin background="#03c75a" color="#ffffff">네이버</SNSLogin>
+                    </SNSBox> */}
+                </LoginBox>
+            </Wrap>
+        </>
     );
 };
 
