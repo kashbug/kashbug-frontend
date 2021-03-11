@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import CorporationInfor from '../../components/mypage/CorporationInfor';
-import CorporationItem from '../../components/mypage/CorporationItem';
+import CorporationInfor from '../../../components/mypage/CorporationInfor';
+import CorporationItem from '../../../components/mypage/CorporationItem';
 
 const ProjectBox = styled.ul`
     margin-top: 64px;

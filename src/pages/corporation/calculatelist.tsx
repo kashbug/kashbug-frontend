@@ -1,18 +1,18 @@
 import Layout from '../../containers/layout/layout';
-import ModifyContainer from '../../containers/corporation/modify/ModifyContainer';
+import CalculateListContainer from '../../containers/corporation/calculate/CalculateListContainer';
 import NavBar from '../../containers/layout/navbar';
 import Footer from '../../components/common/footer';
 
-const Modify = () => {
+const CalculateList = () => {
 	return (
 		<>
 			<NavBar />
 			<Layout>
-				<ModifyContainer />
+                <CalculateListContainer/>
 			</Layout>
 			<Footer/>
 		</>
 	)
 };
 
-export default Modify;
+export default CalculateList;
