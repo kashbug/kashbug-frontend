@@ -26,12 +26,11 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 interface NavBarProps {
-    position?:string;
     color?: string;
     textColor?: string;
 }
 
-const NavBar = ({ position, color, textColor }: NavBarProps) => {
+const NavBar = ({ color, textColor }: NavBarProps) => {
     const classes = useStyles();
     return (
         <>
