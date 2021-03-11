@@ -85,7 +85,7 @@ const Footer = () => {
                         <Menu href="/" name="서비스소개" />
                         <Menu href="/" name="이용약관" />
                         <Menu href="/" name="개인정보처리방침" />
-                        <Menu href="/" name="고객지원" />
+                        <Menu href="/help" name="고객지원" />
                     </MenuList>
                 </nav>
                 <InforList>
