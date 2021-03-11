@@ -128,12 +128,12 @@ const LoginContainer = () => {
                     <IdInput type="password" placeholder="비밀번호"/>
                     <Submit>로그인</Submit>
                     <FindUser />
-                    <SNSInfor>SNS 계정으로 로그인하기</SNSInfor>
+                    {/* <SNSInfor>SNS 계정으로 로그인하기</SNSInfor>
                     <SNSBox>
                         <SNSLogin background="#3B5998" color="#ffffff">페이스북</SNSLogin>
                         <SNSLogin background="#F7E600">카카오</SNSLogin>
                         <SNSLogin background="#03c75a" color="#ffffff">네이버</SNSLogin>
-                    </SNSBox>
+                    </SNSBox> */}
                 </LoginBox>
             </Wrap>
         </>
