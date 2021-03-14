@@ -5,7 +5,7 @@ import NavBar from "../../containers/layout/navbar";
 const ProjectDetail = () => {
     return (
         <>
-            <NavBar position="relative" />
+            <NavBar />
             <Layout>
                 <ProjectDetailContainer />
             </Layout>
