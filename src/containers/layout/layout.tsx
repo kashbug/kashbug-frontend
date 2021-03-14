@@ -4,8 +4,8 @@ import Container from '@material-ui/core/Container';
 const useStyles = makeStyles(() =>
     createStyles({
         container: {
-			padding: '88px 0',
-			minHeight: '100vh'
+			padding: '88px 20px',
+			minHeight: '100vh',
         },
     }),
 );

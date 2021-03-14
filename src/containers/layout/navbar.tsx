@@ -7,8 +7,6 @@ import  Link from 'next/link';
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         headerWrap: {
-            position: 'fixed',
-            backgroundColor: '#ffffff',
             boxShadow: 'none'
         },
         headerBox: {
@@ -18,11 +16,9 @@ const useStyles = makeStyles((theme: Theme) =>
         title: {
             fontWeight: 'bold',
             fontSize: '1rem',
-            color: '#3B4E32'
         },
         menu: {
             marginRight: '16px',
-            color: '#3B4E32',
             '&:last-child': {
                 marginRight: 0
             }
@@ -30,10 +26,11 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 interface NavBarProps {
-    position?:string;
+    color?: string;
+    textColor?: string;
 }
 
-const NavBar = ({ position }: NavBarProps) => {
+const NavBar = ({ color, textColor }: NavBarProps) => {
     const classes = useStyles();
     return (
         <>
