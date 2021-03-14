@@ -1,15 +1,13 @@
-import SignupContainer from "../containers/signup/SignupContainer";
-import NavBar from "../containers/layout/navbar";
+import SignupContainer from '../containers/signup/SignupContainer';
 import Footer from '../components/common/footer';
 
-const Signup = () => {
+const Login = () => {
     return (
         <>
-            <NavBar />
             <SignupContainer />
 			<Footer/>
         </>
     );
 };
 
-export default Signup;
+export default Login;
