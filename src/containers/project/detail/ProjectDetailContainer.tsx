@@ -1,8 +1,6 @@
+import  Link from 'next/link';
 import styled from "styled-components";
-import Info from "./Info";
 import Slider from "../../../components/slider";
-// mui
-import { TextField, FormControl, Button } from '@material-ui/core';
 
 const Benner = styled.div`
     background: center no-repeat url("/projectbenner.png");
@@ -122,7 +120,8 @@ const Pick = styled.div`
         background-color: #ffffff;
     }
 `;
-const FindBug = styled.button`
+const FindBox = styled.a`
+    display: block;
     width: 180px;
     height: 46px;
     color: #2ecc71;
@@ -130,14 +129,26 @@ const FindBug = styled.button`
     font-weight: bold;
     background-color: rgba(0,0,0,0);
     border: 1px solid #2ecc71;
-    outline: 0;
-    cursor: pointer;
     transition-duration: 0.5s;
+    text-align: center;
     :hover {
         color: #ffffff;
         background-color: #2ecc71;
     }
+    :after {
+        content: '';
+        display: inline-block;
+        height: 46px;
+        vertical-align: middle;
+    }
 `;
+const FindBug = () => {
+    return (
+        <Link href={'/bug/add'} passHref>
+            <FindBox>버그 등록하기</FindBox>
+        </Link>
+    )
+}
 const ProjectExplan = styled.p`
     width: 600px;
     margin: 18px 0 12px;
