@@ -30,7 +30,6 @@ const Answers = styled.div`
 `;
 
 const QnaToggleHandler = e => {
-    console.log('start');
     const targetVal = e.target.value;
     const targetBoxs = document.getElementsByClassName('answers');
     const targetBox = document.getElementById(targetVal);
@@ -40,7 +39,7 @@ const QnaToggleHandler = e => {
         targetBoxs[i].style.height = '0';
     }
     var interval = setInterval(() => {
-        console.log(checkVal === maxHeight);
+        console.log(checkVal);
         if (checkVal === maxHeight) {
             clearInterval(interval);
         } else {

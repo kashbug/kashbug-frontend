@@ -1,14 +1,13 @@
-import Layout from '../../containers/layout/layout';
+import Header from "../../containers/common/header";
 import ProjectDetailContainer from '../../containers/project/detail/ProjectDetailContainer';
-import NavBar from "../../containers/layout/navbar"; 
+import Footer from '../../components/common/footer';
 
 const ProjectDetail = () => {
     return (
         <>
-            <NavBar />
-            <Layout>
-                <ProjectDetailContainer />
-            </Layout>
+            <Header />
+            <ProjectDetailContainer />
+            <Footer />
         </>
     );
 };
