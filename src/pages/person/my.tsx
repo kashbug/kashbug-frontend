@@ -1,14 +1,13 @@
-import NavBar from "../../containers/layout/navbar";
-import Layout from "../../containers/layout/layout";
-import MyContainer from "../../containers/person/MyContainer";
+import Header from "../../containers/common/header"; 
+import MyContainer from "../../containers/person/mypage/MyContainer";
+import Footer from '../../components/common/footer';
 
 const My = () => {
     return (
         <>
-            <NavBar color="#56A902" textColor="#fff" />
-            <Layout>
-                <MyContainer />
-            </Layout>
+            <Header />
+            <MyContainer />
+			<Footer/>
         </>
     )
 };

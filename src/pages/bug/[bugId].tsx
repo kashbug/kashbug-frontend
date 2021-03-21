@@ -1,15 +1,14 @@
-import NavBar from "../../containers/layout/navbar";
+import Header from "../../containers/common/header"; 
 import AddContainer from "../../containers/bug/AddContainer";
-import Layout from "../../containers/layout/layout";
+import Footer from '../../components/common/footer';
 
 
 const BugId = () => {
     return(
         <>
-            <NavBar color="#F8F8FF" />
-            <Layout>
-                <AddContainer />
-            </Layout>
+            <Header />
+            <AddContainer />
+			<Footer/>
         </>
     );
 };
