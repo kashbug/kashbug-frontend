@@ -83,7 +83,7 @@ const Modify = styled.a`
 `;
 const ProfileModify = () => {
     return (
-        <Link href={'/bug/add'} passHref>
+        <Link href={'/person/modify'} passHref>
             <Modify>개인정보 수정</Modify>
         </Link>
     )
@@ -122,7 +122,7 @@ const Profile = ({...props}) => {
                         <InfoBox pd ={'0 32px 0 0'}>
                             <ProfileWrap>
                                 <ProfileName>jeongh389</ProfileName>
-                                <Account>연동 계좌</Account>
+                                <Account>연동 계좌 확인됨</Account>
                             </ProfileWrap>
                             <ProfileTagList>
                                 <ProfileTag>#게임</ProfileTag>
