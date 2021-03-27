@@ -185,7 +185,7 @@ const ProjectDetailContainer = () => {
                         <ProjectInfor>서비스 확인 경로 https://www.naver.com/aa/ssasdasda</ProjectInfor>
                         <OptionList>
                             <Option>
-                                <FindBug>버그 등록하기</FindBug>
+                                <FindBug />
                             </Option>
                             <Option>
                                 <PickBox>
