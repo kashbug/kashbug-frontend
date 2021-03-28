@@ -84,7 +84,7 @@ const Modify = styled.a`
 const ProfileModify = () => {
     return (
         <Link href={'/person/modify'} passHref>
-            <Modify>개인정보 수정</Modify>
+            <Modify>개인정보수정</Modify>
         </Link>
     )
 }
@@ -95,9 +95,9 @@ const SituationBox = styled.div`
 const CurrentSituation = styled.div`
     flex: 1 1;
     padding: 16px;
-    :first-child {
-        background-color: #2ecc71;
-        color: #ffffff;
+    :first-child p {
+        color: #2ecc71;
+        font-weight: bolder;
     }
 `;
 const CurrentSituationTitle = styled.p`
@@ -129,7 +129,7 @@ const Profile = ({...props}) => {
                                 <ProfileTag>#영화</ProfileTag>
                             </ProfileTagList>
                         </InfoBox>
-                        <ProfileModify>개인정보수정</ProfileModify>
+                        <ProfileModify />
                     </InfoWrap>
                     <SituationBox>
                         <CurrentSituation>
