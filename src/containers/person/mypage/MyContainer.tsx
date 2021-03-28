@@ -16,9 +16,18 @@ interface FilterProps {
 const Wrap = styled.div`
     display: flex;
     flex-direction: column;
-    margin: 64px auto 100px;
+    margin: 0 auto 100px;
     max-width: 1200px;
     min-height: calc(100vh - 793px);
+`;
+const BugHeaderBgc =styled.div`
+    background-color: #2ecc71;
+`;
+const BugHeader = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1200px;
 `;
 const BugFilterList = styled.ul`
     font-size: 0;
@@ -35,11 +44,11 @@ const FilterBtn = styled.button<FilterProps>`
     outline: 0;
     font-size: 18px;
     font-weight: bold;
-    color: ${(props:any) => props.color || '#cfcfcf'};
-    background-color: #ffffff;
+    color: ${(props:any) => props.color || '#63f5a0'};
+    background-color: #2ecc71;;
     cursor: pointer;
 `;
-const Bug = styled.li`
+const Bug = styled.div`
     display: flex;
     align-items: center;
     height: 56px;
@@ -51,8 +60,8 @@ const BugCategory = styled.p<BugProps>`
     padding: 0 8px;
     width: ${(props:any) => props.width};
     font-size: 16px;
-    border-left: 1px solid #cacaca;
-    color: #333333;
+    border-left: 1px solid #ffffff;
+    color: #ffffff;
     :first-child {
         border-left: 0;
     }
@@ -95,24 +104,30 @@ const MyContainer = () => {
     return (
         <>
             <Profile />
+            <BugHeaderBgc>
+                <BugHeader>
+                    <BugFilterList>
+                        <BugFilter>
+                            <FilterBtn color={'#ffffff'}>등록한 버그</FilterBtn>
+                        </BugFilter>
+                        <BugFilter>
+                            <FilterBtn>채택된 버그</FilterBtn>
+                        </BugFilter>
+                    </BugFilterList>
+                    <div>
+                        <Bug>
+                            <BugCategory width={'280px'}>프로젝트</BugCategory>
+                            <BugCategory width={'100px'}>보상 금액</BugCategory>
+                            <BugCategory width={'100px'}>버그 등록일</BugCategory>
+                            <BugCategory width={'100px'}>버그 종류</BugCategory>
+                            <BugCategory flex={'1 1'}>버그 등록 제목</BugCategory>
+                            <BugCategory width={'100px'}>상태</BugCategory>
+                        </Bug>
+                    </div>
+                </BugHeader>
+            </BugHeaderBgc>
             <Wrap>
-                <BugFilterList>
-                    <BugFilter>
-                        <FilterBtn color={'#333333'}>등록한 버그</FilterBtn>
-                    </BugFilter>
-                    <BugFilter>
-                        <FilterBtn>채택된 버그</FilterBtn>
-                    </BugFilter>
-                </BugFilterList>
                 <ul>
-                    <Bug>
-                        <BugCategory width={'280px'}>프로젝트</BugCategory>
-                        <BugCategory width={'100px'}>보상 금액</BugCategory>
-                        <BugCategory width={'100px'}>버그 등록일</BugCategory>
-                        <BugCategory width={'100px'}>버그 종류</BugCategory>
-                        <BugCategory flex={'1 1'}>버그 등록 제목</BugCategory>
-                        <BugCategory width={'100px'}>상태</BugCategory>
-                    </Bug>
                     {myBugList.map((row, index) => {
                         let price = row.price.toLocaleString();
                         let stateColor = '';
