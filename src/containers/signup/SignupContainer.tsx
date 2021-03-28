@@ -11,6 +11,9 @@ interface CategoriesProps {
     idx: Number;
     categories: String;
 }
+interface GerderProps {
+    margin?: String;
+}
 
 const Wrap = styled.div`
     max-width: 376px;
@@ -100,14 +103,15 @@ const GenderBox = styled.div`
     display: flex;
     margin-top: 32px;
 `;
-const GenderLabel = styled.label`
-    margin-left: ${(props) => props.margin || "0"}; 
+const GenderLabel = styled.label<GerderProps>`
+    margin-left: ${(props:any) => props.margin || "0"}; 
     flex: 1 1;
     background-color: #F5F5F5;
     border-radius: 8px;
     text-align: center;
     color: #777777;
     line-height: 2.4;
+    cursor: pointer;
 `;
 const GenderInput = styled.input`
     position: absolute;
@@ -214,15 +218,15 @@ const LoginContainer = () => {
                     <TextInput type="text" placeholder="이메일"/>
                     <TextInput type="text" placeholder="연락처"/>
                     <SelectInput>
-                        <option value="" disabled selected>출생년도</option>
+                        <option disabled>출생년도</option>
                         {ageItems.map((row, index) => {
-                            return <option key={`${index}_key`}>{row.age}</option>
+                            return <option key={`${index}_key`} value={row.age}>{row.age}</option>
                         })}
                     </SelectInput>
                     <SelectInput>
-                        <option value="" disabled selected>관심사</option>
+                        <option disabled>관심사</option>
                         {categoriesItems.map((row, index) => {
-                            return <option key={`${index}_key`}>{row.categories}</option>
+                            return <option key={`${index}_key`} value={row.categories}>{row.categories}</option>
                         })}
                     </SelectInput>
                     <TagList>

@@ -45,7 +45,8 @@ const ClosingDate = styled.p`
     font-size: 14px;
     color: ${(props) => props.color || "#bababa"}; 
 `;
-const Checker = styled.div`
+const Checker = styled.span`
+    display: inline-block;
     position: absolute;
     top: 50%;
     right: 0;
