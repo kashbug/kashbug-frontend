@@ -160,7 +160,8 @@ const AddContainer = () => {
             </Benner>
             <Wrap>
                 <SelectInput>
-                    <option value="" disabled selected>버그 유형</option>
+                    <option disabled>버그 유형</option>
+                    <option>오타</option>
                 </SelectInput>
                 <TextInput type="text" placeholder="제목" />
                 <TextareaInput placeholder="문제 증상" />
