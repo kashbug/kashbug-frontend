@@ -30,7 +30,7 @@ const Explanation = () => {
             <Wrap>
                 <Title>안녕하세요.</Title>
                 <Text>얼마나 미묘한 것은 사라지지 보라.<br/>피어나기 창공에 품으며, 이상이 가장 천지는 있음으로써 부패를 뿐이다.</Text>
-                <ExplanationImg src="" alt=""/>
+                <ExplanationImg src="/intro_benner_2.png" alt=""/>
             </Wrap>
         </>
     )

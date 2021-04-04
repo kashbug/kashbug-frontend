@@ -22,8 +22,8 @@ ul, ol, dl, li {
   padding: 0;
   list-style: none;
 }
-ul, ol, dl, li {
-  list-style: none;
+button {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Noto Sans KR, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, sans-serif;
 }
 * {
   box-sizing: border-box;
