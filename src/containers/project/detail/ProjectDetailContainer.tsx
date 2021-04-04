@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import  Link from 'next/link';
 import styled from "styled-components";
 import Slider from "../../../components/slider";
@@ -102,24 +103,34 @@ const PickBox = styled.div`
     align-items: center;
     width: 46px;
     height: 46px;
-    border: 1px solid #2ecc71;
-    cursor: pointer;
-    transition-duration: 0.5s;
-    :hover {
-        background-color: #2ecc71;
-    }
 `;
-const Pick = styled.div`
-    display: inline-block;
+const CheckerInput = styled.input`
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip:rect(0,0,0,0);
+    border: 0;
+`;
+const CheckLabel = styled.label`
+    cursor: pointer;
+`;
+const CheckImg = styled.img`
     width: 24px;
     height: 24px;
-    background-color: #2ecc71;
-    cursor: pointer;
-    transition-duration: 0.5s;
-    :hover {
-        background-color: #ffffff;
-    }
+    color: #ffffff;
 `;
+const Checker = ({...props}) => {
+    const img = props.checker === '1' ? '/service-fill.svg' : '/service-line.svg';
+    return (
+        <CheckLabel>
+            <CheckerInput type="checkbox" />
+            <CheckImg src={img} alt="like-checker" />
+        </CheckLabel>
+    )
+}
 const FindBox = styled.a`
     display: block;
     width: 180px;
@@ -163,6 +174,9 @@ const openPop = () => {
     window.open('', "_target", "width=500,height=600");
 };
 const ProjectDetailContainer = () => {
+    const [project, setProject] = useState([
+        {id: 1, profileImg: '/unknow-profile.png', userId: 'jeongh389', tag: ['#영화', '#게임'], prizeMoney: 1000000, registrationBug: 123214, adoptionBug: 23432, compensatedBug: 22432, account: ''}
+    ])
     return (
         <>
             <Benner>
@@ -171,7 +185,7 @@ const ProjectDetailContainer = () => {
             <Wrap>
                 <ProjectInforBox>
                     <ProjectImgBox>
-                        <Slider images={['/img_notfound.png']} maxWidth="600px" radius="" />
+                        <Slider images={['/img_notfound.png', '/img_notfound.png', '/img_notfound.png']} maxWidth="600px" radius="" />
                     </ProjectImgBox>
                     <div>
                         <CorporationName>무지익</CorporationName>
@@ -189,7 +203,7 @@ const ProjectDetailContainer = () => {
                             </Option>
                             <Option>
                                 <PickBox>
-                                    <Pick />
+                                    <Checker/>
                                 </PickBox>
                             </Option>
                         </OptionList>

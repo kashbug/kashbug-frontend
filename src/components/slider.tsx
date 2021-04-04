@@ -46,8 +46,7 @@ const Slider = ({ images, maxWidth, radius }: SliderProps) => {
                 {
                     imageData.length > 0 ? imageData : (
                         <SwiperSlide tag="li" key={`slide`}>
-                            <img src="/benner.png" style={{ height: 'auto', width:'100%' }}/>
-                            <BennerText>소프트웨어 테스팅 플랫폼 Kashbug은<br/>소프트웨어 기업이 테스터와 사용자를 만나는 공간!</BennerText>
+                            <img src="/img_notfound.png" style={{ height: 'auto', width:'100%' }}/>
                         </SwiperSlide>
                     )
                 }
