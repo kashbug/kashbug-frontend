@@ -86,7 +86,7 @@ const FindUserHighlight = styled.span`
 `;
 const FindUser = () => {
     return (
-        <Link href={'/'} passHref>
+        <Link href={'/findid'} passHref>
             <FindUserBox><FindUserHighlight>아이디/비밀번호</FindUserHighlight>가 기억이 안나시나요?</FindUserBox>
         </Link>
     )
